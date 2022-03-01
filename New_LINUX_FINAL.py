@@ -88,11 +88,11 @@ CV_loc = st.text_input('CV Folder path')
 if CV_loc:
     st.write(CV_loc)
 
- JD_loc = st.text_input('JD path')
+JD_loc = st.text_input('JD path')
 if JD_loc:
     st.write(JD_loc)
   
-  final_loc = st.text_input('Final folder path')
+final_loc = st.text_input('Final folder path')
 if final_loc:
     st.write(final_loc)
 # button = st.sidebar.button("Select Folders and JD")
