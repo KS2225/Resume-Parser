@@ -81,7 +81,7 @@ if image_file is not None:
 			  # To See details
 	file_details = {"filename":image_file.name, "filetype":image_file.type,"filesize":image_file.size}
 	st.write(file_details)
-	path = os.path.abspath(image_file.name)
+	path = os.path(image_file.name)
 	st.write(path)
     
 
