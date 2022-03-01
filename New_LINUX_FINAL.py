@@ -52,7 +52,7 @@ st.sidebar.write("---")
 #from tkinter import *
 #from tkinter import filedialog
 
-import wx
+import wxPython as wx
 
 app = wx.App()
 
