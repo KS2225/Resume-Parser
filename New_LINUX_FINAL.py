@@ -85,7 +85,7 @@ st.sidebar.write("---")
 # 	st.write(path)
 
 CV_loc = st.text_input('CV Folder path')
-if path:
+if CV_loc:
     st.write(CV_loc)
 
 # button = st.sidebar.button("Select Folders and JD")
