@@ -78,7 +78,7 @@ button = st.sidebar.button("Select Folders and JD")
 
 if button:
     file1 = filedialog.askopenfile(master = root, title ="Select JD File")
-    CV_loc = st.sidebar.text_input('Selected CV folder path:', file_selector(os.path.abspath(file1.name)))
+    CV_loc = st.sidebar.text_input('Selected CV folder path:', st.file_uploader("Choose an image...", type="jpg"))
     
     file2 = filedialog.askopenfile(master = root, title ="Select JD File")
     if file:
