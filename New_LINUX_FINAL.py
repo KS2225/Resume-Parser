@@ -83,20 +83,7 @@ st.sidebar.write("---")
 # 	st.write(file_details)
 # 	path = os.path.dirname(os.path.abspath(image_file.name))
 # 	st.write(path)
-def file_selector(folder_path='.'):
-    filenames = os.listdir(folder_path)
-    selected_filename = st.selectbox('Select a file', filenames)
-    return os.path.join(folder_path, selected_filename)
 
-
-if __name__ == '__main__':
-    # Select a file
-    if st.checkbox('Select a file in current directory'):
-        folder_path = '.'
-        if st.checkbox('Change directory'):
-            folder_path = st.text_input('Enter folder path', '.')
-        filename = file_selector(folder_path=folder_path)
-        st.write('You selected `%s`' % filename)
 CV_loc = st.text_input('CV Folder path')
 if CV_loc:
     st.write(CV_loc)
