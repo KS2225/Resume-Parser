@@ -72,14 +72,14 @@ st.sidebar.write("---")
 button = st.sidebar.button("Select Folders and JD")
 
 if button:
-    CV_loc = st.sidebar.text_input('Selected CV folder path:', st.file_picker("Pick a folder", folder="my_folder",type=['folder']))
+    CV_loc = st.sidebar.text_input('Selected CV folder path:', os.path.dirname(path))
     
     file = filedialog.askopenfile(master = root, title ="Select JD File")
     if file:
         JD_loc = st.sidebar.text_input('Selected JD file path:', os.path.abspath(file.name))
 
     
-    final_loc = st.sidebar.text_input('Selected Destination folder path:', st.file_picker("Pick a folder", folder="my_folder",type=['folder']) )
+    final_loc = st.sidebar.text_input('Selected Destination folder path:',  os.path.dirname(path))
     
     def read_word_resume(word_doc):
         resume = docx2txt.process(word_doc)
