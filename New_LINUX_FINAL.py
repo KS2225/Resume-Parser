@@ -50,7 +50,7 @@ st.sidebar.write("---")
 
 
 #from Tkinter import *
-from tkinter import filedialog
+from _tkinter import filedialog
 
 
 
