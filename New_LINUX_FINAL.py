@@ -36,8 +36,8 @@ from cachetools import TTLCache
 
 st.title("Resume Screening")
 st.sidebar.image("https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Applus%2B_IDIADA_Logo.svg/1200px-Applus%2B_IDIADA_Logo.svg.png", width = 180)
-root = tk.Tk()
-root.withdraw()
+#root = tk.Tk()
+#root.withdraw()
 
 # Make folder picker dialog appear on top of other windows
 #root.wm_attributes('-topmost', 1)
