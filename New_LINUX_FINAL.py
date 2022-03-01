@@ -29,8 +29,8 @@ import matplotlib.pyplot as plt
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from pdfminer.high_level import extract_text
-import tkinter as tk
-from tkinter import filedialog
+import tk
+from tk import filedialog
 import os
 import numpy as np
 from cachetools import TTLCache
