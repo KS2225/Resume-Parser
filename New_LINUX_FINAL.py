@@ -118,7 +118,7 @@ if final_loc:
         text =  ''.join(resume)
         text = text.replace("\n", "")
         if text:
-            return text
+         return text
 
 
     # In[4]:
