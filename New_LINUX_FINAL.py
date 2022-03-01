@@ -49,8 +49,8 @@ JD_loc = ""
 st.sidebar.write("---")
 
 
-#from tkinter import *
-#from tkinter import filedialog
+from tkinter import *
+from tkinter import filedialog
 
 
 
