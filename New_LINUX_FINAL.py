@@ -52,7 +52,11 @@ st.sidebar.write("---")
 #from tkinter import *
 #from tkinter import filedialog
 
-
+with st.file_input() as input:
+  if input == None:
+    st.warning('No file selected.')
+  else:
+    file_contents = input.read()
 
 
 
