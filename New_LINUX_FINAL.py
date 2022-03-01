@@ -1,6 +1,3 @@
-import tkinter
-
-
 #!pip install pdfminer.six
 #!pip install streamlit
 #!pip install wordcloud
