@@ -66,10 +66,10 @@ num_CV_req = st.sidebar.number_input("Number of top CVs required", min_value = 0
 st.sidebar.write("---")
    
 
-def file_selector(folder_path='.'):
-    filenames = os.listdir(folder_path)
-    selected_filename = st.selectbox('Select a file', filenames)
-    return os.path.join(folder_path, selected_filename)
+# def file_selector(folder_path='.'):
+#     filenames = os.listdir(folder_path)
+#     selected_filename = st.selectbox('Select a file', filenames)
+#     return os.path.join(folder_path, selected_filename)
 
 
     
@@ -78,7 +78,7 @@ button = st.sidebar.button("Select Folders and JD")
 
 if button:
     file1 = st.file_uploader("Choose an image...", type="jpg")
-    CV_loc = st.sidebar.text_input('Selected CV folder path:', os.path.join("fileDir",file1.name))
+    CV_loc = st.sidebar.text_input('Selected CV folder path:', os.path.join(folder_path, file1)
     
     file2 = st.file_uploader("Choose an image...", type="pdf")
     if file2:
