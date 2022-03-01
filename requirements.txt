@@ -6,4 +6,3 @@ nltk==3.5
 sklearn==0.0
 tcl==0.2
 tk==0.1.0
-wxPython==4.1.0
