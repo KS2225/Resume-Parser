@@ -79,7 +79,7 @@ button = st.sidebar.button("Select Folders and JD")
 if button:
     file1 = st.file_uploader("Choose an image...", type="jpg")
     if file1 is not None:
-			    file_details = {"filename":file1.name, "filetype":file1.type, "filesize":file1.size}
+       file_details = {"filename":file1.name, "filetype":file1.type, "filesize":file1.size}
        st.write(file_details)
     CV_loc = st.sidebar.text_input('Selected CV folder path:', os.path.abspath(file1.name))
     
