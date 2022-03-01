@@ -66,20 +66,25 @@ num_CV_req = st.sidebar.number_input("Number of top CVs required", min_value = 0
 st.sidebar.write("---")
    
 
+def file_selector(folder_path='.'):
+    filenames = os.listdir(folder_path)
+    selected_filename = st.selectbox('Select a file', filenames)
+    return os.path.join(folder_path, selected_filename)
+
 
     
 
 button = st.sidebar.button("Select Folders and JD")
 
 if button:
-    CV_loc = st.sidebar.text_input('Selected CV folder path:', os.path.dirname(path))
+    CV_loc = st.sidebar.text_input('Selected CV folder path:', file_selector())
     
     file = filedialog.askopenfile(master = root, title ="Select JD File")
     if file:
         JD_loc = st.sidebar.text_input('Selected JD file path:', os.path.abspath(file.name))
 
     
-    final_loc = st.sidebar.text_input('Selected Destination folder path:',  os.path.dirname(path))
+    final_loc = st.sidebar.text_input('Selected Destination folder path:', file_selector())
     
     def read_word_resume(word_doc):
         resume = docx2txt.process(word_doc)
