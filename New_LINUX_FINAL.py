@@ -36,11 +36,11 @@ from cachetools import TTLCache
 
 st.title("Resume Screening")
 st.sidebar.image("https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Applus%2B_IDIADA_Logo.svg/1200px-Applus%2B_IDIADA_Logo.svg.png", width = 180)
-#root = tk.Tk()
-#root.withdraw()
+root = tk.Tk()
+root.withdraw()
 
 # Make folder picker dialog appear on top of other windows
-#root.wm_attributes('-topmost', 1)
+root.wm_attributes('-topmost', 1)
 CV_loc_1 = ""
 JD_loc = ""
 # Folder picker button
@@ -77,15 +77,15 @@ def file_selector(folder_path='.'):
 button = st.sidebar.button("Select Folders and JD")
 
 if button:
-    file = filedialog.askopenfile(master = root, title ="Select JD File")
-    CV_loc = st.sidebar.text_input('Selected CV folder path:', file_selector(os.path.abspath(file.name)))
+    file1 = filedialog.askopenfile(master = root, title ="Select JD File")
+    CV_loc = st.sidebar.text_input('Selected CV folder path:', file_selector(os.path.abspath(file1.name)))
     
-    #file = filedialog.askopenfile(master = root, title ="Select JD File")
+    file2 = filedialog.askopenfile(master = root, title ="Select JD File")
     if file:
-        JD_loc = st.sidebar.text_input('Selected JD file path:', os.path.abspath(file.name))
+        JD_loc = st.sidebar.text_input('Selected JD file path:', os.path.abspath(file2.name))
 
-    
-    final_loc = st.sidebar.text_input('Selected Destination folder path:', file_selector(os.path.abspath(file.name)))
+    file3 = filedialog.askopenfile(master = root, title ="Select JD File")
+    final_loc = st.sidebar.text_input('Selected Destination folder path:', file_selector(os.path.abspath(file3.name)))
     
     def read_word_resume(word_doc):
         resume = docx2txt.process(word_doc)
