@@ -78,7 +78,7 @@ button = st.sidebar.button("Select Folders and JD")
 
 if button:
     file1 = st.file_uploader("Choose an image...", type="jpg")
-    CV_loc = st.sidebar.text_input('Selected CV folder path:', os.path.abspath(file1.name))
+    CV_loc = st.sidebar.text_input('Selected CV folder path:', os.path.join("fileDir",file1.name))
     
     file2 = st.file_uploader("Choose an image...", type="pdf")
     if file2:
