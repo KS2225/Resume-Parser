@@ -29,7 +29,7 @@ import matplotlib.pyplot as plt
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from pdfminer.high_level import extract_text
-import tkinter as tk
+#import tkinter as tk
 import os
 import numpy as np
 from cachetools import TTLCache
@@ -49,8 +49,8 @@ JD_loc = ""
 st.sidebar.write("---")
 
 
-from tkinter import *
-from tkinter import filedialog
+#from tkinter import *
+#from tkinter import filedialog
 
 
 
