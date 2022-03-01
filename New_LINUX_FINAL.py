@@ -73,33 +73,36 @@ st.sidebar.write("---")
 
 
 
-st.subheader("Image")
-image_file = st.file_uploader("Upload Images", type=["png","jpg","jpeg"])
+# st.subheader("Image")
+# image_file = st.file_uploader("Upload Images", type=["png","jpg","jpeg"])
 
-if image_file is not None:
+# if image_file is not None:
 
-			  # To See details
-	file_details = {"filename":image_file.name, "filetype":image_file.type,"filesize":image_file.size}
-	st.write(file_details)
-	path = os.path.dirname(os.path.abspath(image_file.name))
-	st.write(path)
+# 			  # To See details
+# 	file_details = {"filename":image_file.name, "filetype":image_file.type,"filesize":image_file.size}
+# 	st.write(file_details)
+# 	path = os.path.dirname(os.path.abspath(image_file.name))
+# 	st.write(path)
+
+CV_loc = st.text_input('CV Folder path')
+if path:
+    st.write(CV_loc)
+
+# button = st.sidebar.button("Select Folders and JD")
+
+# if button:
+#     file1 = st.file_uploader("Choose an image...", type="jpg")
+#     if file1 is not None:
+#        file_details = {"filename":file1.name, "filetype":file1.type, "filesize":file1.size}
+#        st.write(file_details)
+#     CV_loc = st.sidebar.text_input('Selected CV folder path:', os.path.abspath(file1.name))
     
+#     file2 = st.file_uploader("Choose an image...", type="pdf")
+#     if file2:
+#         JD_loc = st.sidebar.text_input('Selected JD file path:', os.path.abspath(file2.name))
 
-button = st.sidebar.button("Select Folders and JD")
-
-if button:
-    file1 = st.file_uploader("Choose an image...", type="jpg")
-    if file1 is not None:
-       file_details = {"filename":file1.name, "filetype":file1.type, "filesize":file1.size}
-       st.write(file_details)
-    CV_loc = st.sidebar.text_input('Selected CV folder path:', os.path.abspath(file1.name))
-    
-    file2 = st.file_uploader("Choose an image...", type="pdf")
-    if file2:
-        JD_loc = st.sidebar.text_input('Selected JD file path:', os.path.abspath(file2.name))
-
-    file3 = st.file_uploader("Choose an image...", type="jpg")
-    final_loc = st.sidebar.text_input('Selected Destination folder path:', file_selector(os.path.abspath(file3.name)))
+#     file3 = st.file_uploader("Choose an image...", type="jpg")
+#     final_loc = st.sidebar.text_input('Selected Destination folder path:', file_selector(os.path.abspath(file3.name)))
     
     def read_word_resume(word_doc):
         resume = docx2txt.process(word_doc)
