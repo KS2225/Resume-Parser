@@ -1,0 +1,7 @@
+docx2txt==0.8
+pdfminer.six==20191110
+streamlit==1.5.1
+wordcloud==1.8.1
+nltk==3.5
+sklearn==0.0
+tk==0.1.0
