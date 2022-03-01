@@ -29,14 +29,14 @@ import matplotlib.pyplot as plt
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from pdfminer.high_level import extract_text
-from Tkinter import *
+from Tk import *
 import os
 import numpy as np
 from cachetools import TTLCache
 
 st.title("Resume Screening")
 st.sidebar.image("https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Applus%2B_IDIADA_Logo.svg/1200px-Applus%2B_IDIADA_Logo.svg.png", width = 180)
-root = tkinter.Tk()
+root = Tk.Tk()
 root.withdraw()
 
 # Make folder picker dialog appear on top of other windows
