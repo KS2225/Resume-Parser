@@ -80,11 +80,11 @@ if button:
     file1 = st.file_uploader("Choose an image...", type="jpg")
     CV_loc = st.sidebar.text_input('Selected CV folder path:', os.path.abspath(file1.name))
     
-    file2 = filedialog.askopenfile(master = root, title ="Select JD File")
-    if file:
+    file2 = st.file_uploader("Choose an image...", type="jpg")
+    if file2:
         JD_loc = st.sidebar.text_input('Selected JD file path:', os.path.abspath(file2.name))
 
-    file3 = filedialog.askopenfile(master = root, title ="Select JD File")
+    file3 = st.file_uploader("Choose an image...", type="jpg")
     final_loc = st.sidebar.text_input('Selected Destination folder path:', file_selector(os.path.abspath(file3.name)))
     
     def read_word_resume(word_doc):
