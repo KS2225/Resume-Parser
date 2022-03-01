@@ -71,9 +71,7 @@ st.sidebar.write("---")
 #     selected_filename = st.selectbox('Select a file', filenames)
 #     return os.path.join(folder_path, selected_filename)
 
-def load_image(image_file):
-	img = Image.open(image_file)
-	return img
+
 
 st.subheader("Image")
 image_file = st.file_uploader("Upload Images", type=["png","jpg","jpeg"])
@@ -84,8 +82,8 @@ if image_file is not None:
 	file_details = {"filename":image_file.name, "filetype":image_file.type,"filesize":image_file.size}
 	st.write(file_details)
 
-              # To View Uploaded Image
-	st.image(load_image(image_file),width=250)
+        path = os.path.abspath(image_file.name)
+	st.write(path)
     
 
 button = st.sidebar.button("Select Folders and JD")
