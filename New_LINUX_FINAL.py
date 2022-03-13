@@ -64,7 +64,7 @@ for uploaded_file in uploaded_files:
 
 folderPath = st.text_input('Enter Abys bus monthly data folder path:')
     #I want to pass a folder path with many excel files that are read
- if len(folderPath) != 0:
+if len(folderPath) != 0:
   files = file_selector(folderPath)
   df0 = files[['Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 28', 'Unnamed: 29']]
   df0.rename({'Unnamed: 5':'PlateNumber','Unnamed: 6':'Line Code','Unnamed: 7':'Start Date ','Unnamed: 28':'Total Pieces ','Unnamed: 29':'Total RWF'}, axis=1, inplace=True)
