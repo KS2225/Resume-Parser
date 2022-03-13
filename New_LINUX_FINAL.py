@@ -61,15 +61,19 @@ st.sidebar.write("---")
 # for uploaded_file in uploaded_files:
 #      bytes_data = uploaded_file.read()
 #      st.write("filename:", uploaded_file.name)
-
+filelist=[]
 uploaded_file = st.file_uploader("please upload your data file", type=["xls","xlsx","csv"], accept_multiple_files=True)
 if uploaded_file is not None:
   for i in range(len(uploaded_file)):
       head, sep, tail = str(uploaded_file[i].name).partition(".")
       st.write("file name："+str(head))
       st.write("file type："+str(tail))
-      st.write(uploaded_file)
-   
+      st.write(uploaded_file) 
+     for root, dirs, files in os.walk("your folder directory"):
+      for file in files:
+             filename=os.path.join(root, file)
+             filelist.append(filename)
+     st.write(filelist)   
 #select_JD = st.sidebar.checkbox('Select JD')
 #select_final_folder = st.sidebar.checkbox('Select Output Folder')
 score = st.sidebar.number_input("Percent Accuracy required", min_value = 0, step = 1)
