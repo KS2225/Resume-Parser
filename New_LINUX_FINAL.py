@@ -62,10 +62,10 @@ for uploaded_file in uploaded_files:
      bytes_data = uploaded_file.read()
      st.write("filename:", uploaded_file.name)
 
-uploaded_files2 = st.file_uploader("Choose JD file", accept_multiple_files=False)
-for uploaded_file in uploaded_files2:
-     bytes_data = uploaded_file.read()
-     st.write("filename:", uploaded_file.name)
+uploaded_files2 = st.file_uploader("Choose JD file")
+for uploaded_file2 in uploaded_files2:
+     bytes_data = uploaded_file2.read()
+     st.write("filename:", uploaded_file2.name)
    
 #select_JD = st.sidebar.checkbox('Select JD')
 #select_final_folder = st.sidebar.checkbox('Select Output Folder')
