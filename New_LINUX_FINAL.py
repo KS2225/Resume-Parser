@@ -69,11 +69,11 @@ if uploaded_file is not None:
       st.write("file name："+str(head))
       st.write("file type："+str(tail))
       st.write(uploaded_file) 
-     for root, dirs, files in os.walk("your folder directory"):
-      for file in files:
+      for root, dirs, files in os.walk("your folder directory"):
+       for file in files:
              filename=os.path.join(root, file)
              filelist.append(filename)
-     st.write(filelist)   
+       st.write(filelist)   
 #select_JD = st.sidebar.checkbox('Select JD')
 #select_final_folder = st.sidebar.checkbox('Select Output Folder')
 score = st.sidebar.number_input("Percent Accuracy required", min_value = 0, step = 1)
