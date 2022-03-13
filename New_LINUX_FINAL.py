@@ -52,7 +52,7 @@ st.sidebar.write("---")
 #from tkinter import *
 #from tkinter import filedialog
 
-with st.file_uploader() as input:
+with st.file_uploader("Choose CVs",accept_multiple_files=True) as input:
   if input == None:
     st.warning('No file selected.')
   else:
