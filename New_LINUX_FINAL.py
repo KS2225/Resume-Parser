@@ -52,12 +52,16 @@ st.sidebar.write("---")
 #from tkinter import *
 #from tkinter import filedialog
 
-with st.file_uploader("Choose CVs",accept_multiple_files=True) as input:
-  if input == None:
-    st.warning('No file selected.')
-  else:
-    file_contents = input.read()
-
+# with st.file_uploader("Choose CVs",accept_multiple_files=True) as input:
+#   if input == None:
+#     st.warning('No file selected.')
+#   else:
+#     file_contents = input.read()
+uploaded_files = st.file_uploader("Choose CVs file", accept_multiple_files=True)
+for uploaded_file in uploaded_files:
+     bytes_data = uploaded_file.read()
+     st.write("filename:", uploaded_file.name)
+     st.write(bytes_data)
 
 
 #select_JD = st.sidebar.checkbox('Select JD')
