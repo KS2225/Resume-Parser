@@ -64,21 +64,20 @@ for uploaded_file in uploaded_files:
 
 folderPath = st.text_input('Enter Abys bus monthly data folder path:')
     #I want to pass a folder path with many excel files that are read
-    if len(folderPath) != 0:
-        files = file_selector(folderPath)
-        df0 = files[['Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 28', 'Unnamed: 29']]
-        df0.rename({'Unnamed: 5':'PlateNumber','Unnamed: 6':'Line Code','Unnamed: 7':'Start Date ','Unnamed: 28':'Total Pieces ','Unnamed: 29':'Total RWF'}, axis=1, inplace=True)
+ if len(folderPath) != 0:
+  files = file_selector(folderPath)
+  df0 = files[['Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 28', 'Unnamed: 29']]
+  df0.rename({'Unnamed: 5':'PlateNumber','Unnamed: 6':'Line Code','Unnamed: 7':'Start Date ','Unnamed: 28':'Total Pieces ','Unnamed: 29':'Total RWF'}, axis=1, inplace=True)
         #df['month_year'] = pd.to_datetime(df['Start Date ']).dt.to_period('M')
-        st.write(df0)
+  st.write(df0)
 
-
-    occPath = st.text_input('Enter the occupany data :')
-    if len(occPath) != 0:
-        files = file_selector(occPath)
-        df1 = files[['Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 28', 'Unnamed: 29']]
-        df1.rename({'Unnamed: 5':'PlateNumber','Unnamed: 6':'Line Code','Unnamed: 7':'Start Date ','Unnamed: 28':'Total Pieces ','Unnamed: 29':'Total RWF'}, axis=1, inplace=True)
+occPath = st.text_input('Enter the occupany data :')
+if len(occPath) != 0:
+ files = file_selector(occPath)
+ df1 = files[['Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 28', 'Unnamed: 29']]
+ df1.rename({'Unnamed: 5':'PlateNumber','Unnamed: 6':'Line Code','Unnamed: 7':'Start Date ','Unnamed: 28':'Total Pieces ','Unnamed: 29':'Total RWF'}, axis=1, inplace=True)
         #df['month_year'] = pd.to_datetime(df['Start Date ']).dt.to_period('M')
-        st.write(df1)
+ st.write(df1)
    
 #select_JD = st.sidebar.checkbox('Select JD')
 #select_final_folder = st.sidebar.checkbox('Select Output Folder')
