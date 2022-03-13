@@ -69,7 +69,7 @@ if uploaded_file is not None:
       st.write("file name："+str(head))
       st.write("file type："+str(tail))
       st.write(uploaded_file) 
-      for root, dirs, files in os.walk("your folder directory"):
+      for root, dirs, files in os.walk("D:\HPC"):
        for file in files:
              filename=os.path.join(root, file)
              filelist.append(filename)
