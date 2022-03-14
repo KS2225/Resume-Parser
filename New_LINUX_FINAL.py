@@ -134,13 +134,13 @@ def read_word_resume(word_doc):
 
     ## Delete more stop words
     #if you want a certain word  to not appear in the word cloud, add it to other_stop_word
-    other_stop_words = ['junior', 'senior','experience','etc','job','work','company','technique',
+other_stop_words = ['junior', 'senior','experience','etc','job','work','company','technique',
                         'candidate','skill','skills','language','menu','inc','new','plus','years',
                        'technology','organization','ceo','cto','account','manager','data','scientist','mobile',
                         'developer','product','revenue','strong','impact','ability','lower','cae','vehicle','good','problems',
                        'global','seat','speed']
 
-    def clean_job_decsription(jd):
+def clean_job_decsription(jd):
              ## Clean the Text
              # Lower
         clean_jd = jd.lower()
@@ -165,7 +165,7 @@ def read_word_resume(word_doc):
     # In[5]:
 
 
-    def create_word_cloud(jd):
+def create_word_cloud(jd):
         corpus = jd
         fdist = FreqDist(corpus)
         #print(fdist.most_common(100))
@@ -195,7 +195,7 @@ def read_word_resume(word_doc):
     # In[6]:
 
 
-    def get_resume_score(text):
+def get_resume_score(text):
         cv = CountVectorizer(stop_words='english')
         count_matrix = cv.fit_transform(text)
         #Print the similarity scores
@@ -211,7 +211,7 @@ def read_word_resume(word_doc):
     # In[7]:
 
 
-    import os
+import os
     job_description = extract_text(JD_loc)     #change extract_text to read_word_resume to read a docx file
     clean_jd = clean_job_decsription(job_description) 
     create_word_cloud(clean_jd) 
