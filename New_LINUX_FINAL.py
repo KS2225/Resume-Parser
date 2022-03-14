@@ -58,7 +58,7 @@ st.sidebar.write("---")
 #   else:
 #     file_contents = input.read()
 JD_loc = st.file_uploader("Choose JD file")
-for uploaded_file in uploaded_files:
+for uploaded_file in JD_loc:
      bytes_data = uploaded_file.read()
      st.write("filename:", uploaded_file.name)
 filelist=[]
