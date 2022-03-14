@@ -119,8 +119,7 @@ st.sidebar.write("---")
 
 #     file3 = st.file_uploader("Choose an image...", type="jpg")
 #     final_loc = st.sidebar.text_input('Selected Destination folder path:', file_selector(os.path.abspath(file3.name)))
-    
-    def read_word_resume(word_doc):
+def read_word_resume(word_doc):
         resume = docx2txt.process(word_doc)
         resume = str(resume)
         #print(resume)
