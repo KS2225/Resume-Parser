@@ -59,7 +59,7 @@ st.sidebar.write("---")
 #     file_contents = input.read()
 JD_loc = st.file_uploader("Choose JD file")
 for upload in JD_loc:
- st.write("filename:", upload.name)
+ st.write("Uploaded!")
 filelist=[]
 uploaded_file = st.file_uploader("please upload your data file", accept_multiple_files=True)
 if uploaded_file is not None:
