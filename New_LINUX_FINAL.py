@@ -58,21 +58,13 @@ st.sidebar.write("---")
 #   else:
 #     file_contents = input.read()
 JD_loc = st.file_uploader("Choose JD file")
-for upload in JD_loc:
- st.write("Uploaded!")
+
 filelist=[]
-uploaded_file = st.file_uploader("please upload your data file", accept_multiple_files=True)
+CV_loc = st.file_uploader("please upload your data file", accept_multiple_files=True)
 if uploaded_file is not None:
-  for i in range(len(uploaded_file)):
-      head, sep, tail = str(uploaded_file[i].name).partition(".")
-      st.write("file name："+str(head))
-      st.write("file type："+str(tail))
-      st.write(uploaded_file) 
-      for root, dirs, files in os.walk("D:\HPC"):
-       for file in files:
-             filename=os.path.join(root, file)
-             filelist.append(filename)
-       st.write(filename)   
+  for i in range(len(CV_loc)):
+      head, sep, tail = str(CV_loc[i].name).partition(".")
+      st.write(CV_loc)   
 #select_JD = st.sidebar.checkbox('Select JD')
 #select_final_folder = st.sidebar.checkbox('Select Output Folder')
 score = st.sidebar.number_input("Percent Accuracy required", min_value = 0, step = 1)
@@ -101,17 +93,17 @@ st.sidebar.write("---")
 # 	path = os.path.dirname(os.path.abspath(image_file.name))
 # 	st.write(path)
 
-CV_loc = st.text_input('CV Folder path')
-if CV_loc:
-    st.write(CV_loc)
+# CV_loc = st.text_input('CV Folder path')
+# if CV_loc:
+#     st.write(CV_loc)
 
-JD_loc = st.text_input('JD path')
-if JD_loc:
-    st.write(JD_loc)
+# JD_loc = st.text_input('JD path')
+# if JD_loc:
+#     st.write(JD_loc)
   
-final_loc = st.text_input('Final folder path')
-if final_loc:
-    st.write(final_loc)
+# final_loc = st.text_input('Final folder path')
+# if final_loc:
+#     st.write(final_loc)
 # button = st.sidebar.button("Select Folders and JD")
 
 # if button:
@@ -225,14 +217,14 @@ if final_loc:
     clean_jd = clean_job_decsription(job_description) 
     create_word_cloud(clean_jd) 
     score_dict = {}
-    path = CV_loc   ##enter location of source folder of cvs
+    #path = CV_loc   ##enter location of source folder of cvs
     # Change the directory
-    os.chdir(path)
+    #os.chdir(path)
     # iterate through all file
-    for file in os.listdir():
+    for file in range(len(CV_loc)):
         if file.endswith(".pdf"):
-            file_path = f"{path}/{file}"
-            resume = extract_text(file_path).lower()
+            #file_path = f"{path}/{file}"
+            resume = extract_text(file).lower()
             text = [resume, job_description]
             #print(file,': ')
             #get_resume_score(text)
@@ -240,8 +232,8 @@ if final_loc:
             #print("\n") 
 
         elif file.endswith(".docx"):
-            file_path = f"{path}/{file}"
-            resume = read_word_resume(file_path)
+            #file_path = f"{path}/{file}"
+            resume = read_word_resume(file)
             text = [resume, job_description]
             #print(file,': ')
             #get_resume_score(text)
@@ -249,7 +241,7 @@ if final_loc:
             #print("\n")  
 
         else:
-            file_path = f"{path}/{file}"
+            #file_path = f"{path}/{file}"
             st.write(file, "----Not Scanned")
     st.write("---")
 
