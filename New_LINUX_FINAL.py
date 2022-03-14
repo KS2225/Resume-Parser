@@ -61,7 +61,7 @@ JD_loc = st.file_uploader("Choose JD file")
 
 filelist=[]
 CV_loc = st.file_uploader("please upload your data file", accept_multiple_files=True)
-if uploaded_file is not None:
+if CV_loc is not None:
   for i in range(len(CV_loc)):
       head, sep, tail = str(CV_loc[i].name).partition(".")
       st.write(CV_loc)   
