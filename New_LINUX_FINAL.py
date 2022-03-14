@@ -57,10 +57,10 @@ st.sidebar.write("---")
 #     st.warning('No file selected.')
 #   else:
 #     file_contents = input.read()
-# uploaded_files = st.file_uploader("Choose CVs file", accept_multiple_files=True)
-# for uploaded_file in uploaded_files:
-#      bytes_data = uploaded_file.read()
-#      st.write("filename:", uploaded_file.name)
+JD_loc = st.file_uploader("Choose JD file")
+for uploaded_file in uploaded_files:
+     bytes_data = uploaded_file.read()
+     st.write("filename:", uploaded_file.name)
 filelist=[]
 uploaded_file = st.file_uploader("please upload your data file", accept_multiple_files=True)
 if uploaded_file is not None:
