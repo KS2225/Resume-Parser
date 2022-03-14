@@ -212,67 +212,62 @@ def get_resume_score(text):
 
 
 import os
-    job_description = extract_text(JD_loc)     #change extract_text to read_word_resume to read a docx file
-    clean_jd = clean_job_decsription(job_description) 
-    create_word_cloud(clean_jd) 
-    score_dict = {}
+job_description = extract_text(JD_loc)     #change extract_text to read_word_resume to read a docx file
+clean_jd = clean_job_decsription(job_description) 
+create_word_cloud(clean_jd) 
+score_dict = {}
     #path = CV_loc   ##enter location of source folder of cvs
     # Change the directory
     #os.chdir(path)
     # iterate through all file
-    for file in range(len(CV_loc)):
-        if file.endswith(".pdf"):
+for file in range(len(CV_loc)):
+    if file.endswith(".pdf"):
             #file_path = f"{path}/{file}"
-            resume = extract_text(file).lower()
-            text = [resume, job_description]
+        resume = extract_text(file).lower()
+        text = [resume, job_description]
             #print(file,': ')
             #get_resume_score(text)
-            score_dict[file] = get_resume_score(text)
+        score_dict[file] = get_resume_score(text)
             #print("\n") 
 
-        elif file.endswith(".docx"):
+    elif file.endswith(".docx"):
             #file_path = f"{path}/{file}"
-            resume = read_word_resume(file)
-            text = [resume, job_description]
+        resume = read_word_resume(file)
+        text = [resume, job_description]
             #print(file,': ')
             #get_resume_score(text)
-            score_dict[file] = get_resume_score(text)
+        score_dict[file] = get_resume_score(text)
             #print("\n")  
 
-        else:
+    else:
             #file_path = f"{path}/{file}"
-            st.write(file, "----Not Scanned")
-    st.write("---")
-
-
-    score_dict = dict((k, v) for k, v in score_dict.items() if v >= np.percentile(v,score))
+        st.write(file, "----Not Scanned")
+st.write("---")
+score_dict = dict((k, v) for k, v in score_dict.items() if v >= np.percentile(v,score))
     
-    def find_nearest(array, value):
-        array = np.asarray(array)
-        idx = (np.abs(array - value)).argmin()
-        return idx
-    score_dict_1={}
-    l1 = sorted(list(score_dict.values()), reverse = True)
-    temp = np.percentile(l1, 80)
-    final_percentile = find_nearest(l1,temp)
-    for i in range(0,final_percentile):
-        for key,val in score_dict.items():
-            if val == l1[i]:
-                score_dict_1[key] = val
+def find_nearest(array, value):
+    array = np.asarray(array)
+    idx = (np.abs(array - value)).argmin()
+    return idx
+score_dict_1={}
+l1 = sorted(list(score_dict.values()), reverse = True)
+temp = np.percentile(l1, 80)
+final_percentile = find_nearest(l1,temp)
+for i in range(0,final_percentile):
+    for key,val in score_dict.items():
+        if val == l1[i]:
+            score_dict_1[key] = val
             
-
-
-   
-    import shutil
-    import heapq
-    source_folder = CV_loc    ##enter location of source folder of cvs
-    destination_folder = final_loc    ##enter location of destination folder of cvs
+import shutil
+import heapq
+source_folder = CV_loc    ##enter location of source folder of cvs
+destination_folder = final_loc    ##enter location of destination folder of cvs
 
     #score = int(input("Enter the score threshold: "))
     ## below line will store resumes with a score greater than score
     #score_dict = dict((k, v) for k, v in score_dict.items() if v >= accuracy) ##change the last numeric value to get a score greater than
-    i = 0
-    for file_name in heapq.nlargest(num_CV_req, score_dict_1, key=score_dict_1.get):   ##change the first attribute to the number of resumes you want to short-list
+i = 0
+for file_name in heapq.nlargest(num_CV_req, score_dict_1, key=score_dict_1.get):   ##change the first attribute to the number of resumes you want to short-list
         # construct full file path
         st.write(file_name)
         source = source_folder + '/' + file_name
@@ -283,4 +278,4 @@ import os
             shutil.copy(source, destination)
             os.rename(destination, destination_folder + '/'+ str(i) +'_'+ file_name)
             print('copied', file_name)
-    st.success("The Resumes are successfully copied to your folder. Thank You")
+        st.success("The Resumes are successfully copied to your folder. Thank You")
